@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hari ke - 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        table {
+        margin: auto;
+        background-color: #C4D3FF;
+        width: 300px;
+        max-width: 300px;
+        height: 325px;
+        text-align: center;
+        border-radius: 10px;
+        }
+ 
+        input {
+        outline: 0;
+        position: relative;
+        left: 5px;
+        top: 5px;
+        border: 0;
+        color: #495069;
+        background-color: #fff;
+        border-radius: 4px;
+        width: 60px;
+        height: 50px;
+        float: left;
+        margin: 5px;
+        font-size: 20px;
+        box-shadow: 0 4px rgba(0,0,0,0.2);
+        margin-bottom: 15px;
+        }
+
+        input:hover {
+        border: 0 solid #000;
+        color: #495069;
+        background-color: #fff;
+        border-radius: 4px;
+        width: 60px;
+        height: 50px;
+        float: left;
+        margin: 5px;
+        font-size: 20px;
+        box-shadow: 0 4px #b0d2cf;
+        }
+
+        input:active {
+        top: 4px;
+        border: 0 solid #000;
+        color: #495069;
+        background-color: #fff;
+        border-radius: 4px;
+        width: 60px;
+        height: 50px;
+        float: left;
+        margin: 5px;
+        font-size: 20px;
+        box-shadow: none;
+        }
+
+        #display {
+        width: 280px;
+        max-width: 285px;
+        font-size: 26px;
+        text-align: right;
+        background-color: #bcbd95;
+        float: left;
+        }
+
+        #display:hover {
+        width: 280px;
+        font-size: 26px;
+        text-align: right;
+        background-color: #bcbd95;
+        box-shadow: 0 4px rgba(0,0,0,0.2);
+	float: left;
+        }
+
+        #display:active {
+        top: 5px;
+        width: 280px;
+        font-size: 26px;
+        text-align: right;
+        background-color: #bcbd95;
+        box-shadow: 0 4px rgba(0,0,0,0.2);
+	float: left;        
+	}
+
+        .operator {
+        background-color: #cee9ea;
+        position: relative;
+        }
+
+        .operator:hover {
+        background-color: #cee9ea;
+        box-shadow: 0 4px #b0d2cf;
+        }
+
+        .operator:active {
+        top: 4px;
+        box-shadow: none;
+        }
+
+        #clear {
+        float: left;
+        position: relative;
+        display: block;
+        background-color: #ff9fa8;
+        }
+
+        #clear:hover {
+        float: left;
+        display: block;
+        background-color: #F297A0;
+        margin-bottom: 15px;
+        box-shadow: 0 4px #CC7F86;
+        }
+
+        #clear:active {
+        float: left;
+        top: 4px;
+        display: block;
+        background-color: #F297A0;
+        margin-bottom: 15px;
+        box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin-top: 50px; align-self: center">
+        <div class="card" style="text-align: center; justify-content: center; box-shadow: 10px 10px grey;">
+            <div class="card-header">
+                <h1>Calculator</h1>
+            </div>
+            <div class="card-body" style="background-image: linear-gradient(to right, rgba(255,0,0,0.1), rgb(0, 153, 255))">
+                <form name="calculator" style="justify-content: center">
+                    <table>
+                       <tr>
+                          <td colspan="4">
+                             <input type="text" name="display" id="display" disabled>
+                            
+                          </td>
+                       </tr>
+                       <tr>
+                             <td><input type="button" name="one" value="1" onclick="calculator.display.value += '1'"></td>
+                             <td><input type="button" name="two" value="2" onclick="calculator.display.value += '2'"></td>
+                             <td><input type="button" name="three" value="3" onclick="calculator.display.value += '3'"></td>
+                             <td><input type="button" class="operator" name="plus" value="+" onclick="calculator.display.value += '+'"></td>
+                      </tr>
+                      <tr>
+                             <td><input type="button" name="four" value="4" onclick="calculator.display.value += '4'"></td>
+                             <td><input type="button" name="five" value="5" onclick="calculator.display.value += '5'"></td>
+                             <td><input type="button" name="six" value="6" onclick="calculator.display.value += '6'"></td>
+                             <td><input type="button" class="operator" name="minus" value="-" onclick="calculator.display.value += '-'"></td>
+                      </tr>
+                      <tr>
+                             <td><input type="button" name="seven" value="7" onclick="calculator.display.value += '7'"></td>
+                             <td><input type="button" name="eight" value="8" onclick="calculator.display.value += '8'"></td>
+                             <td><input type="button" name="nine" value="9" onclick="calculator.display.value += '9'"></td>
+                             <td><input type="button" class="operator" name="times" value="x" onclick="calculator.display.value += '*'"></td>
+                      </tr>
+                      <tr>
+                             <td><input type="button" id="clear" name="clear" value="c" onclick="calculator.display.value = ''"></td>
+                             <td><input type="button" name="zero" value="0" onclick="calculator.display.value += '0'"></td>
+                             <td><input type="button" name="doit" value="=" onclick="calculator.display.value = eval(calculator.display.value)"></td>
+                             <td><input type="button" class="operator" name="div" value="/" onclick="calculator.display.value += '/'"></td>
+                       
+                       </tr>
+                    </table>
+                 </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
